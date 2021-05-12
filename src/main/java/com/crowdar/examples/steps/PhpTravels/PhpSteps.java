@@ -26,8 +26,22 @@ public class PhpSteps extends PageSteps {
         Injector._page(PhpTravelsTour.class).selectionDia();
     }
 
-    @Then("Todo salio bien")
-    public void todoSalioBien() {
+    @And("Selecciono la cantidad de adulos a viajar")
+    public void seleccionoLaCantidadDeAdulosAViajar() {
+
+    }
+
+    @And("Selecciono la cantidad de chicos")
+    public void seleccionoLaCantidadDeChicos() {
+
+    }
+
+    @And("Selecciono la cantidad de infantes")
+    public void seleccionoLaCantidadDeInfantes() {
+    }
+
+    @Then("Reservar el tour")
+    public void reservarElTour() {
         Injector._page(PhpTravelsTour.class).clickBook();
     }
 }
