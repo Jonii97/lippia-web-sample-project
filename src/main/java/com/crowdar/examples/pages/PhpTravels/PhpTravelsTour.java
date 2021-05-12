@@ -9,8 +9,9 @@ public class PhpTravelsTour extends PhpHomePage{
         this.url="";
     }
 
-    private final String BUTTON_DATE_CSS = "body > div.body-inner > div > div > div.page-wrapper.page-detail.bg-light > div:nth-child(5) > div > div.col-12.col-lg-4.col-xl-3.order-lg-last > aside > div > form > div > div > div > div > div:nth-child(1) > input";
-    private final String BUTTON_DAY_XPATH = "//*[@id=\"datepickers-container\"]/div[1]/div/div/div[2]/div[31]";
+    private final String BUTTON_DATE_CSS = "body > div.body-inner > div > div > div.page-wrapper.page-detail.bg-light > div:nth-child(5) > div > div.col-12.col-lg-4.col-xl-3.order-lg-last > aside > div > form > div > div > div > div > div:nth-child(1)";
+    private final String BUTTON_CALENDAR_CSS = "#datepickers-container > div.datepicker.-bottom-left-.-from-bottom-.active > div > div";
+    private final String BUTTON_DAY_CSS = "#datepickers-container > div.datepicker.-bottom-left-.-from-bottom-.active > div > div > div.datepicker--cells.datepicker--cells-days > div.datepicker--cell.datepicker--cell-day.-current-.-selected-";
 
     private final String BUTTON_ADULTS_CSS = "#selectedAdults";
     private final String BUTTON_ADULTS_NUMBER_CSS = "#selectedAdults > option:nth-child(2)";
@@ -24,7 +25,8 @@ public class PhpTravelsTour extends PhpHomePage{
 
     public void selectionDia()  {
         clickElement(By.cssSelector(BUTTON_DATE_CSS));
-        //*[@id=\'datepickers-container\']/div[1]
+        waitForElementClickable(By.cssSelector(BUTTON_CALENDAR_CSS));
+        clickElement(By.cssSelector(BUTTON_DAY_CSS));
     }
 
     public void clickBook(){
