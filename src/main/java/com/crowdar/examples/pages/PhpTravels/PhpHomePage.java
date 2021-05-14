@@ -10,10 +10,6 @@ public class PhpHomePage extends PhpBasePage{
     }
 
     private final String BUTTON_CSS = "#search > div > div > div > div > div > nav > ul > li:nth-child(1) > a";
-
     public void go(){navigateToCompleteURL();}
-    public void clickHotel(){
-        clickElement(By.cssSelector(BUTTON_CSS));
-    }
 
 }

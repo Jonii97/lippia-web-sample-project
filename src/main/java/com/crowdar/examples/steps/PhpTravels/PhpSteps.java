@@ -4,6 +4,7 @@ import com.crowdar.core.Injector;
 import com.crowdar.core.PageSteps;
 import com.crowdar.examples.pages.PhpTravels.PhpHomePage;
 import com.crowdar.examples.pages.PhpTravels.PhpTravelsHotel;
+import com.crowdar.examples.pages.PhpTravels.PhpTravelsHotelsDetalle;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,13 +23,29 @@ public class PhpSteps extends PageSteps {
     }
 
     @And("Ingresa una fecha")
-    public void ingresaUnaFecha() {
+    public void ingresaUnaFechaDateDate() {
         Injector._page(PhpTravelsHotel.class).datePicker();
     }
 
-
-    @Then("Click Book")
+    @And("Click Book")
     public void clickBook() {
         Injector._page(PhpTravelsHotel.class).clickBook();
+    }
+
+    @When("Ingreso los datos: Name (.*), Apellido (.*), Email (.*), ConfEmail (.*), Number (.*), Address (.*)")
+    public void ingresoLosDatosNameNameApellidoSurnameEmailMailConfEmailConfEmailNumberNumberAddressAddress(String name, String surname, String mail, String confEmail, String number, String address) {
+        Injector._page(PhpTravelsHotelsDetalle.class).validateFormulario();
+        Injector._page(PhpTravelsHotelsDetalle.class).completoFormularioNombre(name, surname);
+        Injector._page(PhpTravelsHotelsDetalle.class).completoFormularioMail(mail, confEmail, number, address);
+    }
+
+    @And("Selecciono el pais")
+    public void seleccionoElPais() {
+        Injector._page(PhpTravelsHotelsDetalle.class).seleccionarPais();
+    }
+
+    @Then("Confirmo Reserva")
+    public void confirmoReserva() {
+        Injector._page(PhpTravelsHotelsDetalle.class).confirm();
     }
 }
