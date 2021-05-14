@@ -3,7 +3,7 @@ package com.crowdar.examples.steps.PhpTravels;
 import com.crowdar.core.Injector;
 import com.crowdar.core.PageSteps;
 import com.crowdar.examples.pages.PhpTravels.PhpHomePage;
-import com.crowdar.examples.pages.PhpTravels.PhpTravelsTour;
+import com.crowdar.examples.pages.PhpTravels.PhpTravelsHotel;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,32 +16,19 @@ public class PhpSteps extends PageSteps {
         Injector._page(PhpHomePage.class).go();
     }
 
-    @When("Selcciono un tour")
-    public void selccionoUnTour() {
-        Injector._page(PhpHomePage.class).clickBoton();
+    @When("Selecciono un Tour")
+    public void seleccionoUnTour() {
+        Injector._page(PhpTravelsHotel.class).selectTour();
     }
 
-    @And("Selecciono una fecha")
-    public void seleccionoUnaFecha() {
-        Injector._page(PhpTravelsTour.class).selectionDia();
+    @And("Ingresa una fecha")
+    public void ingresaUnaFecha() {
+        Injector._page(PhpTravelsHotel.class).datePicker();
     }
 
-    @And("Selecciono la cantidad de adulos a viajar")
-    public void seleccionoLaCantidadDeAdulosAViajar() {
 
-    }
-
-    @And("Selecciono la cantidad de chicos")
-    public void seleccionoLaCantidadDeChicos() {
-
-    }
-
-    @And("Selecciono la cantidad de infantes")
-    public void seleccionoLaCantidadDeInfantes() {
-    }
-
-    @Then("Reservar el tour")
-    public void reservarElTour() {
-        Injector._page(PhpTravelsTour.class).clickBook();
+    @Then("Click Book")
+    public void clickBook() {
+        Injector._page(PhpTravelsHotel.class).clickBook();
     }
 }
