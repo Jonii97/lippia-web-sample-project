@@ -22,6 +22,11 @@ public class PhpSteps extends PageSteps {
         Injector._page(PhpTravelsHotel.class).selectTour();
     }
 
+    @And("Selecciono un infante")
+    public void seleccionoUnInfante() {
+        Injector._page(PhpTravelsHotel.class).infantPicker();
+    }
+
     @And("Ingresa una fecha")
     public void ingresaUnaFechaDateDate() {
         Injector._page(PhpTravelsHotel.class).datePicker();
@@ -48,4 +53,6 @@ public class PhpSteps extends PageSteps {
     public void confirmoReserva() {
         Injector._page(PhpTravelsHotelsDetalle.class).confirm();
     }
+
+
 }

@@ -5,6 +5,7 @@ And Hacer una reserva de viaje en la pagina
   Scenario Outline: Como usuario de la web quiero navegar por la página de PHPTravels y realizar una reserva
     Given El usuario esta en la home Page
     When Selecciono un Tour
+    And Selecciono un infante
     And Ingresa una fecha
     And Click Book
     When Ingreso los datos: Name <name>, Apellido <surname>, Email <mail>, ConfEmail <confEmail>, Number <number>, Address <address>

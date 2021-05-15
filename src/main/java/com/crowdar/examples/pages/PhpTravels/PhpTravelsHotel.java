@@ -17,6 +17,15 @@ public class PhpTravelsHotel extends PhpHomePage {
     private final String CALENDAR_XPATH = "//*[@id=\"datepickers-container\"]/div[1]/div";
     private final String DAY_XPATH = "//*[@id=\"datepickers-container\"]/div[1]/div/div/div[2]/div[34]";
 
+    private final String ADULT_XPATH = "//*[@id=\"selectedAdults\"]";
+    private final String ADULT_NUMBERS_XPATH = "//*[@id=\"selectedAdults\"]/option[3]";
+
+    private final String CHILD_XPATH = "//*[@id=\"selectedChild\"]";
+    private final String CHILD_NUMBERS_XPATH = "//*[@id=\"selectedChild\"]/option[3]";
+
+    private final String INFANT_XPATH = "//*[@id=\"selectedInfants\"]";
+    private final String INFANT_NUMBERS_XPATH = "//*[@id=\"selectedInfants\"]/option[2]";
+
     private final String BOOK_CSS = "body > div.body-inner > div > div > div.page-wrapper.page-detail.bg-light > div:nth-child(5) > div > div.col-12.col-lg-4.col-xl-3.order-lg-last > aside > div > form > div > form > button";
 
     public void selectTour(){
@@ -27,6 +36,12 @@ public class PhpTravelsHotel extends PhpHomePage {
         clickElement(By.cssSelector(DATE_CSS));
         waitForElementPresence(By.xpath(CALENDAR_XPATH));
         driver.findElement(By.xpath(DAY_XPATH)).click();
+    }
+
+    public void infantPicker(){
+        clickElement(By.xpath(INFANT_XPATH));
+        waitForElementPresence(By.xpath(INFANT_NUMBERS_XPATH));
+        driver.findElementByXPath(INFANT_NUMBERS_XPATH).click();
     }
 
     public void clickBook(){

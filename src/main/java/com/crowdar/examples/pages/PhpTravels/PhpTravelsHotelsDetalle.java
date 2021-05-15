@@ -23,6 +23,8 @@ public class PhpTravelsHotelsDetalle extends PhpBasePage{
     private final String COUNTRY_CSS = "#guestform > div:nth-child(5) > div > div.chosen-container.chosen-container-single";
     private final String SELECT_COUNTRY_CSS = "#guestform > div:nth-child(5) > div > div.chosen-container.chosen-container-single.chosen-with-drop.chosen-container-active > div > ul > li:nth-child(6)";
 
+    private final String EXTRA_CSS = "#\\38";
+
     private final String CONFIRM_CSS = "#bookingdetails > div.form-group > button";
 
 
@@ -55,11 +57,20 @@ public class PhpTravelsHotelsDetalle extends PhpBasePage{
     public void seleccionarPais(){
         clickElement(By.cssSelector(COUNTRY_CSS));
         waitForElementPresence(By.cssSelector(SELECT_COUNTRY_CSS));
-        driver.findElement(By.cssSelector(SELECT_COUNTRY_CSS)).click();
+        clickElement(By.cssSelector(SELECT_COUNTRY_CSS));
+    }
+
+    public void seleccionoExtra(){
+        driver.findElement(By.cssSelector(EXTRA_CSS));
     }
 
 
     public void confirm(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         clickElement(By.cssSelector(CONFIRM_CSS));
     }
 }
