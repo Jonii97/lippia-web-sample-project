@@ -10,6 +10,7 @@ And Hacer una reserva de viaje en la pagina
     And Click Book
     When Ingreso los datos: Name <name>, Apellido <surname>, Email <mail>, ConfEmail <confEmail>, Number <number>, Address <address>
     And Selecciono el pais
+    And Selecciono un Extra
     Then Confirmo Reserva
 
     Examples:

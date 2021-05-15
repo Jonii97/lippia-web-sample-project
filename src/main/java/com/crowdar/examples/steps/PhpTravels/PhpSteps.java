@@ -49,10 +49,14 @@ public class PhpSteps extends PageSteps {
         Injector._page(PhpTravelsHotelsDetalle.class).seleccionarPais();
     }
 
+    @And("Selecciono un Extra")
+    public void seleccionoUnExtra() {
+        Injector._page(PhpTravelsHotelsDetalle.class).seleccionoExtra();
+    }
+
     @Then("Confirmo Reserva")
     public void confirmoReserva() {
         Injector._page(PhpTravelsHotelsDetalle.class).confirm();
     }
-
 
 }

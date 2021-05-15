@@ -41,7 +41,7 @@ public class PhpTravelsHotel extends PhpHomePage {
     public void infantPicker(){
         clickElement(By.xpath(INFANT_XPATH));
         waitForElementPresence(By.xpath(INFANT_NUMBERS_XPATH));
-        driver.findElementByXPath(INFANT_NUMBERS_XPATH).click();
+        driver.findElement(By.xpath(INFANT_NUMBERS_XPATH)).click();
     }
 
     public void clickBook(){

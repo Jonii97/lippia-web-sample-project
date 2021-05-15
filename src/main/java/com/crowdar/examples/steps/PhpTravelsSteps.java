@@ -3,6 +3,7 @@ package com.crowdar.examples.steps;
 import com.crowdar.core.Injector;
 import com.crowdar.core.PageSteps;
 import com.crowdar.examples.pages.HomePage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,4 +24,5 @@ public class PhpTravelsSteps extends PageSteps {
     public void TheAboutUsPageIsDisplayed() {
         Injector._page(HomePage.class).clickBlog();
     }
+
 }

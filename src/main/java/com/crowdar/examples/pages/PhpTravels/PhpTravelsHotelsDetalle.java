@@ -1,6 +1,8 @@
 package com.crowdar.examples.pages.PhpTravels;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
@@ -23,7 +25,7 @@ public class PhpTravelsHotelsDetalle extends PhpBasePage{
     private final String COUNTRY_CSS = "#guestform > div:nth-child(5) > div > div.chosen-container.chosen-container-single";
     private final String SELECT_COUNTRY_CSS = "#guestform > div:nth-child(5) > div > div.chosen-container.chosen-container-single.chosen-with-drop.chosen-container-active > div > ul > li:nth-child(6)";
 
-    private final String EXTRA_CSS = "#\\38";
+    private final String EXTRA_XPATH = "//*[@id=\"bookingdetails\"]/div[2]/div/table/tbody/tr[1]/td[4]/label/span[1]";
 
     private final String CONFIRM_CSS = "#bookingdetails > div.form-group > button";
 
@@ -61,7 +63,8 @@ public class PhpTravelsHotelsDetalle extends PhpBasePage{
     }
 
     public void seleccionoExtra(){
-        driver.findElement(By.cssSelector(EXTRA_CSS));
+        driver.findElement(By.xpath(EXTRA_XPATH)).click();
+        sleep(2000);
     }
 
 
